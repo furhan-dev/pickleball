@@ -3,69 +3,99 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
 }
 
 User.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        rating: {
+            type: DataType.DECIMAL,
+            defaultValue: NULL,
+        },
+        dupr_id: {
+            defaultValue: NULL,
+        },
+        dupr_rating: {
+            type: DataType.DECIMAL,
+            defaultVlue: NULL,
+        },
+        isAdmin: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
+        admin_for: {
+            type: DataTypes.STRING,
+            defaultValue: NULL,
+            references: {
+                model: 'locations',
+                key: 'id',
+            },
+        },
+        isContact: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
+        contact_for: {
+            type: DataTypes.STRING,
+            defaultValue: NULL,
+            references: {
+                model: 'locations',
+                key: 'id',
+            },
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true,
+            },
+        },
+        favorite_location: {
+            type: DataTypes.STRING,
+            references: {
+                model: 'favorite_locations',
+                key: 'id',
+            },
+        }, 
+        favorite_playtime: {}, // todo: create Favorite_playtimes model
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [8],
+            },
+        },
     },
-    rating: {
-        type: DataType.DECIMAL, //COMPLETE THIS
-    },
-    dupr_id: {},
-    dupr_rating: {
-        type: DataType.DECIMAL, //COMPLETE THIS
-        //default null or whatever
-    },
-    isAdmin:{
-        type: DataTypes.BOOLEAN,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
-    favorite_location: {}, //reference locations
-    favorite_playtime: {}, //reference playtimes
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8],
-      },
-    },
-  },
-  {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-      beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-        return updatedUserData;
-      },
-    },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
-  }
+    {
+        hooks: {
+            beforeCreate: async (newUserData) => {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
+            beforeUpdate: async (updatedUserData) => {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            },
+        },
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'users',
+    }
 );
 
 module.exports = User;
