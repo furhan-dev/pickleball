@@ -22,19 +22,16 @@ Locations.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
     address: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
+    admin_id: {}, //references user with isAdmin=true
+    contact_id: {}, //references user with isContact=true
+    availability: {
+      type: DataTypes.STRING,
       references: {
-        model: 'user',
+        model: 'playtimes',
         key: 'id',
       },
     },
@@ -44,8 +41,8 @@ Locations.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'locations',
   }
 );
 
-module.exports = Project;
+module.exports = Locations;
