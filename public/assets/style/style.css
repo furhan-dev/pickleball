@@ -1,3 +1,17 @@
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 4rem auto;
+    width: 100%;
+    bottom: 0px;
+
+    font-size: 150%;
+    letter-spacing: 2px;
+}
+nav a {
+    margin: 20px;
+}
 footer {
     position: absolute;
     display: flex;
