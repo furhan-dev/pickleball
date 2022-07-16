@@ -1,16 +1,22 @@
+body {
+    background-color: rgb(231, 243, 231);
+}
 nav {
-    position: absolute;
     display: flex;
     justify-content: center;
-    margin: 4rem auto;
     width: 100%;
-    bottom: 0px;
 
-    font-size: 150%;
-    letter-spacing: 2px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 175%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    background-color: rgb(97, 118, 131);
 }
 nav a {
     margin: 20px;
+    text-decoration: none;
+    color: rgb(239, 240, 247);
 }
 footer {
     position: absolute;
