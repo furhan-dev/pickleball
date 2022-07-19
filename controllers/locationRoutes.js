@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { locations, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
    
-    const projectData = await Location.findAll({
+    const locationData = await Location.findAll({
       include: [
         {
           model: User,
