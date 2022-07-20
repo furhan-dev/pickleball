@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Locations extends Model {}
+class Location extends Model { }
 
-Locations.init(
+Location.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -19,9 +19,25 @@ Locations.init(
       type: DataTypes.STRING,
     },
     num_courts: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
+<<<<<<< HEAD:models/Location.js
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    start_time: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    play_duration: {
+      type: DataTypes.DECIMAL,
+      allowNull: true,
+    },
+=======
+>>>>>>> main:models/locations.js
     address: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -39,10 +55,17 @@ Locations.init(
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
     underscored: true,
+<<<<<<< HEAD:models/Location.js
+    modelName: 'location',
+  }
+);
+
+module.exports = Location;
+=======
     modelName: 'locations',
   }
 );
 
 module.exports = Locations;
+>>>>>>> main:models/locations.js

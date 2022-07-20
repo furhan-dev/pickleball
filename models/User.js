@@ -79,6 +79,58 @@ User.init(
             },
         },
     },
+<<<<<<< HEAD:models/User.js
+    rating: {
+      type: DataType.DECIMAL, //COMPLETE THIS
+    },
+    dupr_id: {},
+    dupr_rating: {
+      type: DataType.DECIMAL, //COMPLETE THIS
+      //default null or whatever
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    favorite_location: {}, //reference locations
+    favorite_playtime: {}, //reference playtimes
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
+    },
+  },
+  {
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      beforeUpdate: async (updatedUserData) => {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
+      },
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
+  }
+=======
     {
         hooks: {
             beforeCreate: async (newUserData) => {
@@ -96,6 +148,7 @@ User.init(
         underscored: true,
         modelName: 'users',
     }
+>>>>>>> main:models/users.js
 );
 
 module.exports = User;
