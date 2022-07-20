@@ -1,26 +1,21 @@
 const router = require('express').Router();
-const { locations, User } = require('../models');
+const { Location, User } = require('../models'); // locations > Location
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
    
     const locationData = await Location.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+      // Removed the User include - no associations for now in models/index.js
     });
 
     
-    const location = locationData.map((project) => location.get({ plain: true }));
+    const location = locationData.map((Location) => location.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
      location, 
-      logged_in: req.session.logged_in 
+      // logged_in: req.session.logged_in //login not implemented yet
     });
   } catch (err) {
     res.status(500).json(err);
