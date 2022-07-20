@@ -25,6 +25,13 @@ Favorite_locations.init(
               key: 'id',
             },
         },
-    });
+    },
+    {
+      sequelize,
+      timestamps: false,
+      underscored: true,
+      modelName: 'favorite_locations',
+    }
+    );
 
     module.exports = Favorite_locations;
