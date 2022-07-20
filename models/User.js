@@ -17,15 +17,16 @@ User.init(
             autoIncrement: true,
         },
         rating: {
-            type: DataType.DECIMAL,
-            defaultValue: NULL,
+            type: DataTypes.DECIMAL,
+            defaultValue: "NULL",
         },
         dupr_id: {
-            defaultValue: NULL,
+            type: DataTypes.INTEGER,
+            defaultValue: "NULL",
         },
         dupr_rating: {
-            type: DataType.DECIMAL,
-            defaultVlue: NULL,
+            type: DataTypes.DECIMAL,
+            defaultVlue: "NULL",
         },
         isAdmin: {
             type: DataTypes.BOOLEAN,
@@ -33,7 +34,7 @@ User.init(
         },
         admin_for: {
             type: DataTypes.STRING,
-            defaultValue: NULL,
+            defaultValue: "NULL",
             references: {
                 model: 'locations',
                 key: 'id',
@@ -45,7 +46,7 @@ User.init(
         },
         contact_for: {
             type: DataTypes.STRING,
-            defaultValue: NULL,
+            defaultValue: "NULL",
             references: {
                 model: 'locations',
                 key: 'id',
@@ -70,7 +71,6 @@ User.init(
                 key: 'id',
             },
         }, 
-        favorite_playtime: {}, // todo: create Favorite_playtimes model
         password: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -79,58 +79,6 @@ User.init(
             },
         },
     },
-<<<<<<< HEAD:models/User.js
-    rating: {
-      type: DataType.DECIMAL, //COMPLETE THIS
-    },
-    dupr_id: {},
-    dupr_rating: {
-      type: DataType.DECIMAL, //COMPLETE THIS
-      //default null or whatever
-    },
-    isAdmin: {
-      type: DataTypes.BOOLEAN,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
-    favorite_location: {}, //reference locations
-    favorite_playtime: {}, //reference playtimes
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8],
-      },
-    },
-  },
-  {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-      beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-        return updatedUserData;
-      },
-    },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
-  }
-=======
     {
         hooks: {
             beforeCreate: async (newUserData) => {
@@ -148,7 +96,6 @@ User.init(
         underscored: true,
         modelName: 'users',
     }
->>>>>>> main:models/users.js
 );
 
 module.exports = User;
