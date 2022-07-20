@@ -30,7 +30,7 @@ Favorite_locations.init(
       sequelize,
       timestamps: false,
       underscored: true,
-      modelName: 'favorite_locations',
+      modelName: 'favorite_location',
     }
     );
 

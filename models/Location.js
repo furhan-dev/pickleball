@@ -28,19 +28,12 @@ Location.init(
     },
     // admin_id: {}, //references user with isAdmin=true
     // contact_id: {}, //references user with isContact=true
-    availability: {
-      type: DataTypes.STRING,
-      references: {
-        model: 'playtimes',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,
     timestamps: false,
     underscored: true,
-    modelName: 'locations',
+    modelName: 'location',
   }
 );
 

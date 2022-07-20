@@ -67,7 +67,7 @@ User.init(
         favorite_location: {
             type: DataTypes.STRING,
             references: {
-                model: 'favorite_locations',
+                model: 'favoriteLocations',
                 key: 'id',
             },
         }, 
@@ -92,9 +92,8 @@ User.init(
         },
         sequelize,
         timestamps: false,
-        freezeTableName: true,
         underscored: true,
-        modelName: 'users',
+        modelName: 'user',
     }
 );
 
