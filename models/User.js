@@ -18,23 +18,19 @@ User.init(
         },
         rating: {
             type: DataTypes.DECIMAL,
-            defaultValue: "NULL",
         },
         dupr_id: {
             type: DataTypes.INTEGER,
-            defaultValue: "NULL",
         },
         dupr_rating: {
             type: DataTypes.DECIMAL,
-            defaultVlue: "NULL",
         },
         isAdmin: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
         admin_for: {
-            type: DataTypes.STRING,
-            defaultValue: "NULL",
+            type: DataTypes.INTEGER,
             references: {
                 model: 'locations',
                 key: 'id',
@@ -45,8 +41,7 @@ User.init(
             defaultValue: false,
         },
         contact_for: {
-            type: DataTypes.STRING,
-            defaultValue: "NULL",
+            type: DataTypes.INTEGER,
             references: {
                 model: 'locations',
                 key: 'id',
@@ -64,13 +59,6 @@ User.init(
                 isEmail: true,
             },
         },
-        favorite_location: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'favoriteLocations',
-                key: 'id',
-            },
-        }, 
         password: {
             type: DataTypes.STRING,
             allowNull: false,
