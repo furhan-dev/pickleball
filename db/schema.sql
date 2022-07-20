@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS pickleball_db;
-CREATE DATABASE pickleball_db;
+DROP DATABASE IF EXISTS nvxgd4kmkpelo1k4;
+CREATE DATABASE nvxgd4kmkpelo1k4;
