@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: rgb(231, 243, 231);
 }
 nav {
@@ -28,4 +28,28 @@ footer {
 
     font-family: 'Courier New', Courier, monospace;
     font-size: 75%;
+} */
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #4cef00;
+}
+  
+nav .navbar-nav a:hover {
+  color: black;
+  text-decoration: underline;
+}
+  
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 96%;
+  margin: 0.5rem auto 0 auto;
+  padding: 0 2.5rem;
+  padding-top: 0;
+  /*  max width no larger than 1200px as the page looks too sparse and project cards grow too big */
+  max-width: 1200px;
 }
