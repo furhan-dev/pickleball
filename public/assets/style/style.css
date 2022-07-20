@@ -1,6 +1,6 @@
 :root {
   --almost-white: #fefefe;
-  --brand-green: #62ff00;
+  --brand-color: #006198;
 }
 
 * {
@@ -14,11 +14,15 @@ body {
 }
 
 nav {
-  background-color: var(--brand-green);
+  background-color: var(--brand-color);
+}
+
+nav .navbar-nav a {
+  color: var(--almost-white) !important;
 }
   
 nav .navbar-nav a:hover {
-  color: black;
+  color: white !important;
   text-decoration: underline;
 }
   
@@ -38,4 +42,9 @@ footer {
   text-align: center;
   padding-bottom: 1rem;
   margin: 1rem;
+}
+
+.title,
+.subtitle {
+  color: var(--almost-white) !important;
 }
