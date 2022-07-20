@@ -17,15 +17,15 @@ User.init(
       autoIncrement: true,
     },
     rating: {
-        type: DataType.DECIMAL, //COMPLETE THIS
+      type: DataType.DECIMAL, //COMPLETE THIS
     },
     dupr_id: {},
     dupr_rating: {
-        type: DataType.DECIMAL, //COMPLETE THIS
-        //default null or whatever
+      type: DataType.DECIMAL, //COMPLETE THIS
+      //default null or whatever
     },
-    isAdmin:{
-        type: DataTypes.BOOLEAN,
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
     },
     name: {
       type: DataTypes.STRING,
