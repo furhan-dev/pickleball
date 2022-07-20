@@ -1,4 +1,16 @@
-const Users = require('./User');
-const Locations = require('./Location');
+const User = require('./User');
+const Location = require('./Location');
+// const Playtimes = require('./Playtime');
+const favoriteLocation = require('./favoriteLocation');
 
-module.exports = { Users, Locations };
+User.hasMany(favoriteLocation, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+favoriteLocation.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+
+module.exports = { User, Location, favoriteLocation };
