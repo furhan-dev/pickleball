@@ -1,0 +1,14 @@
+[
+    {
+      "name": "Greenlake",
+      "description": "It is at greenlake, duh",
+      "num_courts": "5",
+      "address": "1234 Fake St. Seattle, WA 98112"
+    },
+    {
+        "name": "Ballard",
+        "description": "Ballard, so hip",
+        "num_courts": "2",
+        "address": "4321 Real St. Seattle, WA 98112"
+      }
+]
