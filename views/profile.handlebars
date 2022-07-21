@@ -1,21 +1,26 @@
-{{#each user as |whatever|}}
-<div class="card col-sm">
+<div class="card col-sm mt-5">
+  {{#each user as |whatever|}}
   <div class="card-body">
-    <h5 class="card-title">{{whatever.name}}</h5>
+    <h3 class="card-title">{{whatever.name}}</h3>
     <h6 class="card-subtitle mb-2 text-muted">{{whatever.email}}</h6>
     <p class="card-text">Your rating is: {{whatever.rating}}</p>
-    {{/each}}
 
-    <h1>Your Favorite Locations</h1>
+    <h4>Your Favorite Courts</h4>
 
     {{#each userlocations as |userlocation| }}
-    <div class="card col-sm">
+    <div class="card col shadow-sm my-3">
       <div class="card-body">
-        <h5 class="card-title">{{location.name}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{location.address}}</h6>
-        <p class="card-text">{{location.description}}</p>
-        <p class="card-text">Number of courts available: {{location.num_courts}}</p>
+        <h5 class="card-title">{{userLocation.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{userLocation.address}}</h6>
+        <div class="card-text">
+          <p class="mb-0">{{userLocation.description}}</p>
+          <p class="mb-0">Number of courts: {{userLocation.num_courts}}</p>
+        </div>
 
-        <a href="/{{location.id}}" class="stretched-link"></a>
+        <a href="/{{userLocation.id}}" class="stretched-link"></a>
       </div>
-      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+  {{/each}}
+</div>
