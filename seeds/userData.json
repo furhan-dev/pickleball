@@ -1,17 +1,30 @@
 [
     {
-      "name": "Sal",
+      "first_name": "Sal",
+      "last_name": "Pickle",
       "email": "sal@hotmail.com",
-      "password": "password12345"
+      "password": "password12345",
+      "rating": 5.0
     },
     {
-      "name": "Lernantino",
+      "first_name": "Lernantino",
+      "last_name": "Pickle",
       "email": "lernantino@gmail.com",
-      "password": "password12345"
+      "password": "password12345",
+      "rating": 3.5
     },
     {
-      "name": "Amiko",
+      "first_name": "Amiko",
+      "last_name": "Pickle",
       "email": "amiko2k20@aol.com",
-      "password": "password12345"
+      "password": "password12345",
+      "rating": 2.5
+    },
+    {
+      "first_name": "Furhan",
+      "last_name": "Samani",
+      "email": "contact@furhan.dev",
+      "password": "password12345",
+      "rating": 4.0
     }
 ]

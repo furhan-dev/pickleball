@@ -17,7 +17,7 @@ User.init(
             autoIncrement: true,
         },
         rating: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.FLOAT(2, 1),
         },
         dupr_id: {
             type: DataTypes.INTEGER,
@@ -47,7 +47,11 @@ User.init(
                 key: 'id',
             },
         },
-        name: {
+        first_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        last_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
