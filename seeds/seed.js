@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Location } = require('../models');
+const { User, Location, UserLocation } = require('../models');
 
 const userData = require('./userData.json');
 const locationData = require('./locationData.json');
+const userLocationData = require('./userLocationData.json')
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -15,6 +16,12 @@ const seedDatabase = async () => {
   for (const location of locationData) {
     await Location.create({
       ...location,
+    });
+  }
+
+  for (const userL of userLocationData) {
+    await UserLocation.create({
+      ...userL,
     });
   }
 
