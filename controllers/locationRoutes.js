@@ -1,18 +1,30 @@
 const router = require('express').Router();
-const { Location, User, UserLocation } = require('../models'); // locations > Location
+const { Location, Event, User, UserLocation } = require('../models'); // locations > Location
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
 
-    const locationData = await Location.findAll();
+    // const locationData = await Location.findAll();
+    const eventData = await Event.findAll({
+      include:
+      {
+        model: Location,
+        attributes: ['name', 'address']
 
-    const locations = locationData.map((Location) => Location.get({ plain: true }));
+      }
 
+    }
+    );
+    const events = eventData.map((Event) => Event.get({ plain: true }));
+
+    // const locations = locationData.map((Location) => Location.get({ plain: true }));
+
+    console.log("EVENTS: " + JSON.stringify(events));
 
     // Pass serialized data and session flag into template
     res.render('homepage', {
-      locations,
+      events,
       logged_in: req.session.logged_in
     });
   } catch (err) {

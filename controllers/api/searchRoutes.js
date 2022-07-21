@@ -19,11 +19,12 @@ router.post('/', async (req, res) => {
       location.distanceFromUser = getDistance(userCoordinates, locationCoordinates);
     }
     console.log("locations: " + JSON.stringify(locations));
-    res.render('homepage', {
-      locations,
-    });
-    // res.status(200).json(locations);
+    // res.status(200).render('search', {
+    //   locations,
+    // });
+    res.status(200).json(locations);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -43,6 +44,7 @@ async function getCoordinates(place) {
     const res = await geocoder.geocode(place);
     const lat = res[0].latitude;
     const lon = res[0].longitude;
+    console.log("LAT, LON " + lat + ", " + lon)
     return { latitude: res[0].latitude, longitude: res[0].longitude };
   } catch (err) {
     res.status(400).json(err);
