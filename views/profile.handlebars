@@ -1,1 +1,14 @@
-<h1>THIS IS YOUR PROFILE</h1>
+
+<h1>Your Favorite Locations</h1>
+
+{{#each locations as |location| }}
+<div class="card col-sm" >
+  <div class="card-body">
+    <h5 class="card-title">{{location.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{location.address}}</h6>
+    <p class="card-text">{{location.description}}</p>
+        <p class="card-text">Number of courts available: {{location.num_courts}}</p>
+
+    <a href="/{{location.id}}" class="stretched-link"></a>
+  </div>
+{{/each}}
