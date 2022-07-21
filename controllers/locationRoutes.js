@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-   
+
     const locationData = await Location.findAll();
 
     const locations = locationData.map((Location) => Location.get({ plain: true }));
