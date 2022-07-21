@@ -1,10 +1,16 @@
-<form class="login-container login-form">
-    <label for="username">Username:</label>
-    <input type="text" id="username" class="username" placeholder="Your username..." spellcheck="off">
-    <label for="password">Password:</label>
-    <input type="password" id="password" class="password" placeholder="Your password..." spellcheck="off">
-    <button type="submit" class="login">Login</button>
-</form>
-<a href="/signup">Sign up!</a>
-
-<script src="./assets/script/login.js"></script>
+ <main class="row justify-content-center align-items-center">
+            <div id="login-container" class="col-md-12">
+                <form id="login-form" class="form">
+                    <h3 class="text-center my-4">Welcome back!</h3>
+                    <hr class="my-3">
+                    <label for="email" class="my-1">Email:</label><br>
+                        <input type="text" name="email" id="email" class="form-control mb-2">
+                    <label for="password" class="my-1">Password:</label><br>
+                        <input type="text" name="password" id="password" class="form-control mb-2">
+                    <input type="submit" name="login" class="btn btn-info btn-md my-3" value="Login">
+                    <div id="register-link" class="text-center">
+                        <span>Don't have an account?<br><a href="#" class="text-info">Register here</a></span>
+                    </div>
+                </form>
+            </div>
+        </main>

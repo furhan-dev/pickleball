@@ -48,3 +48,11 @@ footer {
 .subtitle {
   color: var(--almost-white) !important;
 }
+
+#login-container {
+  max-width: 400px;
+  padding: 1rem 2rem 2rem 2rem;
+
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+}
