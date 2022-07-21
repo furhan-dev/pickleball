@@ -17,23 +17,20 @@ User.init(
             autoIncrement: true,
         },
         rating: {
-            type: DataType.DECIMAL,
-            defaultValue: NULL,
+            type: DataTypes.DECIMAL,
         },
         dupr_id: {
-            defaultValue: NULL,
+            type: DataTypes.INTEGER,
         },
         dupr_rating: {
-            type: DataType.DECIMAL,
-            defaultVlue: NULL,
+            type: DataTypes.DECIMAL,
         },
         isAdmin: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
         admin_for: {
-            type: DataTypes.STRING,
-            defaultValue: NULL,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'locations',
                 key: 'id',
@@ -44,8 +41,7 @@ User.init(
             defaultValue: false,
         },
         contact_for: {
-            type: DataTypes.STRING,
-            defaultValue: NULL,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'locations',
                 key: 'id',
@@ -63,14 +59,6 @@ User.init(
                 isEmail: true,
             },
         },
-        favorite_location: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'favorite_locations',
-                key: 'id',
-            },
-        }, 
-        favorite_playtime: {}, // todo: create Favorite_playtimes model
         password: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -92,9 +80,8 @@ User.init(
         },
         sequelize,
         timestamps: false,
-        freezeTableName: true,
         underscored: true,
-        modelName: 'users',
+        modelName: 'user',
     }
 );
 

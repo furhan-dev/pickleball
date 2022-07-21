@@ -1,26 +1,14 @@
-const Users = require('./Users');
-const Locations = require('./Locations');
-const Playtimes = require('./Playtimes');
-const Favorite_locations = require('./Favorite_locations');
+const User = require('./User');
+const Location = require('./Location');
+const UserLocation = require('./UserLocation');
+// const Playtimes = require('./Playtime');
+// const favoriteLocation = require('./favoriteLocation');
 
-Users.hasMany(Favorite_locations, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
+// User.hasMany(Location, {
+//   foreignKey: 'id',
+// });
 
-Favorite_locations.belongsTo(User, {
-  foreignKey: 'user_id'
-});
+Location.belongsToMany(User, { through: UserLocation });
+User.belongsToMany(Location, { through: UserLocation });
 
-Locations.hasMany(Playtimes, {
-    foreignKey: "locations",
-    // Watch out - cascading ondelete?
-});
-
-Playtimes.hasMany(Locations, {
-    foreignKey: availability,
-    // watch out - cascading ondelete?
-});
-
-
-module.exports = { Users, Locations, Playtimes, Favorite_locations };
+module.exports = { User, Location, UserLocation };

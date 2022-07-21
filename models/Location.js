@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Playtimes extends Model {}
+class Location extends Model { }
 
-Playtimes.init(
+Location.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,28 +11,30 @@ Playtimes.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    day_of_week: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    time_of_day: {
+    description: {
       type: DataTypes.STRING,
     },
-    locations: {
-      type: DataTypes.STRING,
-      references: {
-        model: 'locations',
-        key: 'id',
-      },
+    num_courts: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    // admin_id: {}, //references user with isAdmin=true
+    // contact_id: {}, //references user with isContact=true
   },
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
     underscored: true,
-    modelName: 'playtimes',
+    modelName: 'location',
   }
 );
 
-module.exports = Playtimes;
+module.exports = Location;

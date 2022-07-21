@@ -1,31 +1,58 @@
+:root {
+  --almost-white: #fefefe;
+  --brand-color: #006198;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-color: rgb(231, 243, 231);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  background-color: var(--almost-white);
 }
+
 nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 175%;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-    background-color: rgb(97, 118, 131);
+  background-color: var(--brand-color);
 }
-nav a {
-    margin: 20px;
-    text-decoration: none;
-    color: rgb(239, 240, 247);
+
+nav .navbar-nav a {
+  color: var(--almost-white) !important;
 }
+  
+nav .navbar-nav a:hover {
+  color: white !important;
+  text-decoration: underline;
+}
+  
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 96%;
+  margin: 0.5rem auto 0 auto;
+  padding: 0 2.5rem;
+  padding-top: 0;
+  /*  max width no larger than 1200px as the page looks too sparse and project cards grow too big */
+  max-width: 1200px;
+}
+
 footer {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: 100%;
-    bottom: 0px;
+  text-align: center;
+  padding-bottom: 1rem;
+  margin: 1rem;
+}
 
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 75%;
+.title,
+.subtitle {
+  color: var(--almost-white) !important;
+}
+
+#login-container {
+  max-width: 400px;
+  padding: 1rem 2rem 2rem 2rem;
+
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
 }
