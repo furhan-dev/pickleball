@@ -1,0 +1,14 @@
+[
+    {
+      "name": "Seattle Metro Pickleball Tournament",
+      "description": "Seattle's premiere tournament that attracts amateur and professional players from all over the country",
+      "date": "2022-07-22",
+      "location_id": 3
+    },
+    {
+      "name": "Founders Tournament",
+      "description": "Annual tournament held where the sport was founded, in Bainbridge, WA",
+      "date": "2022-08-10",
+      "location_id": 4 
+    }
+]
