@@ -2,21 +2,22 @@ const signupForm = async (event) => {
 
     event.preventDefault();
   
-    const username = document.querySelector('#username-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+    const email = document.querySelector('#email').value.trim();
+    const password = document.querySelector('#password').value.trim();
+    const name = document.querySelector('#name').value.trim();
   
-    if (username && password) {
+    if (email && password && name) {
         if(password.length < 8){
             alert("Password must be 8 characters or more")
         };
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password, name }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/profile');
       }
     }
   };

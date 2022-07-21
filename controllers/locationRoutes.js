@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Location, User } = require('../models'); // locations > Location
+const { Location, User, UserLocation } = require('../models'); // locations > Location
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-   
+
     const locationData = await Location.findAll();
 
     const locations = locationData.map((Location) => Location.get({ plain: true }));
@@ -47,18 +47,37 @@ router.get('/location/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
+    const userlocationData = await UserLocation.findAll({
+      // include: [
+      //   {
+      //     model: Location,
+      //     attributes: ['name', 'description', 'num_courts']
+      //   },
+      // ],
+      //  where: {
+      //   user_id: req.session.user_id,
+      // },
+    });
 
-    // const userData = await User.findByPk(req.session.user_id, {
-    //   attributes: { exclude: ['password'] },
-    //   include: [{ model: locations }],
-    // });
+    // Serialize data so the template can read it
+    const userlocations = userlocationData.map((UserLocation) => UserLocation.get({ plain: true }));
 
-    // const user = userData.get({ plain: true });
+    const userData = await User.findAll({
+      where: {
+        id: req.session.user_id
+      }
+    })
 
-    res.render('profile',  {
-      // ...user,
+    const user = userData.map((User) => User.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('profile', {
+      userlocations,
+      user,
       logged_in: req.session.logged_in
     });
+
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -72,6 +91,16 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('signup');
 });
 
 router.get('/about', (req, res) => {
