@@ -10,5 +10,17 @@
       "description": "Dedicated pickleball courts. Always open play except when there are league matches on Tues/Thurs summer evenings.",
       "num_courts": "3",
       "address": "500 8th St S, Kirkland, WA 98033"
+    },
+    {
+      "name": "Shoreview Park",
+      "description": "Dedicated pickleball courts. Hosts many Seattle-area tournaments.",
+      "num_courts": "6",
+      "address": "700 NW Innis Arden Way Seattle, WA 98177"
+    },
+    {
+      "name": "Battle Point Park",
+      "description": "Dedicated pickleball courts. Home of the annual Founders Tournament.",
+      "num_courts": "6",
+      "address": "11299 Arrow Point Dr NE, Bainbridge Island, WA 98110"
     }
 ]

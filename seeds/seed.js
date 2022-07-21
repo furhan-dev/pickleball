@@ -1,7 +1,8 @@
 const sequelize = require('../config/connection');
-const { User, Location, UserLocation } = require('../models');
+const { User, Location, Event, UserLocation } = require('../models');
 
 const userData = require('./userData.json');
+const eventData = require('./eventData.json');
 const locationData = require('./locationData.json');
 const userLocationData = require('./userLocationData.json')
 
@@ -16,6 +17,12 @@ const seedDatabase = async () => {
   for (const location of locationData) {
     await Location.create({
       ...location,
+    });
+  }
+
+  for (const event of eventData) {
+    await Event.create({
+      ...event,
     });
   }
 
