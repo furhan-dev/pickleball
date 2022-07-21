@@ -5,18 +5,14 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
    
-    const locationData = await Location.findAll({
-      // Removed the User include - no associations for now in models/index.js
-    });
+    // const locationData = await Location.findAll({
+    // });
 
     
-    const location = locationData.map((Location) => location.get({ plain: true }));
+    // const location = locationData.map((Location) => location.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-     location, 
-      // logged_in: req.session.logged_in //login not implemented yet
-    });
+    res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
   }
