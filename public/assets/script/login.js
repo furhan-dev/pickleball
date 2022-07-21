@@ -1,5 +1,4 @@
 const loginForm = async (event) => {
-alert("script activated")
     event.preventDefault();
   
     // Collect values from the login form
@@ -8,7 +7,6 @@ alert("script activated")
   
     if (email && password) {
       // Send a POST request to the API endpoint
-      alert("AWODAWODAFWJAFGW")
       const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
