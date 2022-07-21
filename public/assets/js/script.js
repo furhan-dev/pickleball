@@ -14,7 +14,7 @@ const getCourts = async (event) => {
   console.log("RESPONSE: " + JSON.stringify(response));
 
   // if (response.ok) {
-  //   document.location.replace('/dashboard');
+  //   document.location.replace('/search');
   // }
 }
 

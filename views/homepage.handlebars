@@ -9,16 +9,17 @@
 </div>
 
 
-<h3>All Locations</h3>
+<h3>Upcoming Events</h3>
 
-{{#each locations as |location| }}
+{{#each events as |event| }}
 <div class="card col shadow-sm my-2">
   <div class="card-body">
-    <h5 class="card-title">{{location.name}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{location.address}}</h6>
+    <h5 class="card-title">{{event.name}} - {{event.date}}</h5>
+    <div class="card-subtitle">
+      <h6 class="mb-2 text-muted">{{event.location.name}} - {{event.location.address}}</h6>
+    </div>
     <div class="card-text">
-      <p class="mb-0">{{location.description}}</p>
-      <p class="mb-0">Number of courts: {{location.num_courts}}</p>
+      <p class="my-4">{{event.description}}</p>
     </div>
 
     <a href="/{{location.id}}" class="stretched-link"></a>
