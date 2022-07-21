@@ -1,16 +1,14 @@
 const User = require('./User');
 const Location = require('./Location');
+const UserLocation = require('./UserLocation');
 // const Playtimes = require('./Playtime');
 // const favoriteLocation = require('./favoriteLocation');
 
-// User.hasMany(favoriteLocation, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
+// User.hasMany(Location, {
+//   foreignKey: 'id',
 // });
 
-// favoriteLocation.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
+Location.belongsToMany(User, { through: UserLocation });
+User.belongsToMany(Location, { through: UserLocation });
 
-
-module.exports = { User, Location };
+module.exports = { User, Location, UserLocation };
