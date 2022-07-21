@@ -60,9 +60,18 @@ router.get('/profile', withAuth, async (req, res) => {
     // Serialize data so the template can read it
     const userlocations = userlocationData.map((UserLocation) => UserLocation.get({ plain: true }));
 
+    const userData = await User.findAll({
+      where: {
+        id: req.session.user_id
+      }
+    })
+
+    const user = userData.map((User) => User.get({ plain: true }));
+
     // Pass serialized data and session flag into template
     res.render('profile', {
       userlocations,
+      user,
       // logged_in: req.session.logged_in
     });
 
