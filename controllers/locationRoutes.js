@@ -5,14 +5,14 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
    
-    // const locationData = await Location.findAll({
-    // });
+    const locationData = await Location.findAll();
 
-    
-    // const location = locationData.map((Location) => location.get({ plain: true }));
+    const locations = locationData.map((Location) => Location.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage');
+    res.render('homepage', {
+      locations,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
