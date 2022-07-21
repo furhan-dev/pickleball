@@ -27,7 +27,10 @@
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "geolib": "^3.3.3",
     "mysql2": "^2.3.3",
+    "node-geocoder": "^4.2.0",
+    "node-open-geocoder": "^4.0.1",
     "path": "^0.12.7",
     "sequelize": "^6.21.3"
   },
