@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 router.get('/location/:id', async (req, res) => {
   try {
     const locationData = await Location.findByPk(req.params.id, {
@@ -68,6 +69,13 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/about', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+
+
+  res.render('about');
 });
 
 module.exports = router;
