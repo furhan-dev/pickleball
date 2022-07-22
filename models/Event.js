@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const moment = require('moment');
 const sequelize = require('../config/connection');
 
 class Event extends Model { }
@@ -21,6 +22,9 @@ Event.init(
     date: {
       type: DataTypes.DATE,
       allowNull: false,
+      get() {
+        return moment(this.getDataValue('date')).format('MMMM Do YYYY');
+      }
     },
     location_id: {
       type: DataTypes.INTEGER,
