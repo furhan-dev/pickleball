@@ -1,0 +1,32 @@
+<div class="row justify-content-center align-items-center mt-5">
+  <div id="login-container" class="col">
+    <form id="signup-form" class="form signup-form">
+      <h3 class="text-center my-4">Sign up!</h3>
+      <hr class="my-3">
+      <label for="first-name" class="my-1">First Name:</label><br>
+      <input type="text" name="first-name" id="first-name" class="form-control mb-2">
+      <label for="last-name" class="my-1">Last Name:</label><br>
+      <input type="text" name="last-name" id="last-name" class="form-control mb-2">
+      <label for="rating" class="my-2">Pickleball Rating:</label><br>
+      <select class="form-select mb-2" id="rating" aria-label="Rating selection">
+        <option selected>Select Rating</option>
+        <option value="2.5">2.5</option>
+        <option value="3.0">3.0</option>
+        <option value="3.5">3.5</option>
+        <option value="4.0">4.0</option>
+        <option value="4.5">4.5</option>
+        <option value="5.0">5.0</option>
+      </select>
+      <label for="email" class="my-1">Email:</label><br>
+      <input type="text" name="email" id="email" class="form-control mb-2">
+      <label for="password" class="my-1">New Password:</label><br>
+      <input type="password" name="password" id="password" class="form-control mb-2">
+      <input type="submit" name="signup" class="btn btn-info btn-md my-3" value="Signup">
+      <div id="register-link" class="text-center">
+        <span>Have an account?<br><a href="#" class="text-info">Log in here</a></span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="./assets/js/signup.js"></script>

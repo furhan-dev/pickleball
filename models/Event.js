@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
+const moment = require('moment');
 const sequelize = require('../config/connection');
 
-class Location extends Model { }
+class Event extends Model { }
 
-Location.init(
+Event.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -18,26 +19,28 @@ Location.init(
     description: {
       type: DataTypes.STRING,
     },
-    num_courts: {
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      get() {
+        return moment(this.getDataValue('date')).format('MMMM Do YYYY');
+      }
+    },
+    location_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'locations',
+        key: 'id'
+      }
     },
-    address: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    image: {
-      type: DataTypes.STRING,
-    }
-    // admin_id: {}, //references user with isAdmin=true
-    // contact_id: {}, //references user with isContact=true
   },
   {
     sequelize,
     timestamps: false,
     underscored: true,
-    modelName: 'location',
+    modelName: 'event',
   }
 );
 
-module.exports = Location;
+module.exports = Event;

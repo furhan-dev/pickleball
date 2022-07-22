@@ -1,14 +1,26 @@
 [
     {
       "name": "Greenlake",
-      "description": "It is at greenlake, duh",
-      "num_courts": "5",
-      "address": "1234 Fake St. Seattle, WA 98112"
+      "description": "Mixed ages and levels. Open play hours are from 6pm to Sunset.",
+      "num_courts": "8",
+      "address": "7201 East Green Lake Dr N, Seattle, WA 98115"
     },
     {
-        "name": "Ballard",
-        "description": "Ballard, so hip",
-        "num_courts": "2",
-        "address": "4321 Real St. Seattle, WA 98112"
+      "name": "Everest Park",
+      "description": "Dedicated pickleball courts. Always open play except when there are league matches on Tues/Thurs summer evenings.",
+      "num_courts": "3",
+      "address": "500 8th St S, Kirkland, WA 98033"
+    },
+    {
+      "name": "Shoreview Park",
+      "description": "Dedicated pickleball courts. Hosts many Seattle-area tournaments.",
+      "num_courts": "6",
+      "address": "700 NW Innis Arden Way Shoreline, WA 98177"
+    },
+    {
+      "name": "Battle Point Park",
+      "description": "Dedicated pickleball courts. Home of the annual Founders Tournament.",
+      "num_courts": "6",
+      "address": "11299 Arrow Point Dr NE, Bainbridge Island, WA 98110"
     }
 ]

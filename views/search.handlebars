@@ -8,18 +8,15 @@
   </div>
 </div>
 
-
-<h3>Upcoming Events</h3>
-
-{{#each events as |event| }}
+{{#each locations as |location| }}
 <div class="card col shadow-sm my-2">
   <div class="card-body">
-    <h5 class="card-title">{{event.name}} - {{event.date}}</h5>
-    <div class="card-subtitle">
-      <h6 class="mb-2 text-muted">{{event.location.name}} - {{event.location.address}}</h6>
-    </div>
+    <h5 class="card-title">{{location.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{location.address}}</h6>
     <div class="card-text">
-      <p class="my-4">{{event.description}}</p>
+      <p class="mb-0">{{location.distanceFromUser}} miles away</p>
+      <p class="mb-0">{{location.description}}</p>
+      <p class="mb-0">Number of courts: {{location.num_courts}}</p>
     </div>
 
     <a href="/{{location.id}}" class="stretched-link"></a>
