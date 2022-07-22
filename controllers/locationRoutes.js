@@ -18,13 +18,16 @@ router.get('/', async (req, res) => {
     );
     const events = eventData.map((Event) => Event.get({ plain: true }));
 
-    // const locations = locationData.map((Location) => Location.get({ plain: true }));
+    const locationData = await Location.findAll({})
+
+    const locations = locationData.map((Location) => Location.get({ plain: true }));
 
     console.log("EVENTS: " + JSON.stringify(events));
 
     // Pass serialized data and session flag into template
     res.render('homepage', {
       events,
+      locations,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -35,19 +38,16 @@ router.get('/', async (req, res) => {
 
 router.get('/location/:id', async (req, res) => {
   try {
-    const locationData = await Location.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    const locationData = await Location.findAll({
+      where: {
+        id: req.params.id
+      }
+    })
 
-    const location = locationData.get({ plain: true });
+    const locations = locationData.map((Location) => Location.get({ plain: true }));
 
     res.render('location', {
-      ...location,
+      locations,
       logged_in: req.session.logged_in
     });
   } catch (err) {
