@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/location/:id', async (req, res) => {
+router.get('/location/:id', withAuth, async (req, res) => {
   try {
     const locationData = await Location.findAll({
       where: {
