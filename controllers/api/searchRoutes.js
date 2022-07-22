@@ -3,14 +3,14 @@ const NodeGeocoder = require('node-geocoder');
 const geolib = require('geolib');
 const { Location } = require('../../models');
 
-router.post('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const locationData = await Location.findAll();
     const locations = locationData.map((Location) => Location.get({ plain: true }));
 
     // get user input location lat, lon
-    const userCoordinates = await getCoordinates(req.body.place)
-    console.log("REQ BODY " + req.body.place);
+    const userCoordinates = await getCoordinates(req.params.id)
+    console.log("REQ BODY " + req.params.id);
     for (let i = 0; i < locations.length; i++) {
       const location = locations[i];
       // get lat, lon, distance from user for each location
@@ -19,10 +19,11 @@ router.post('/', async (req, res) => {
       location.distanceFromUser = getDistance(userCoordinates, locationCoordinates);
     }
     console.log("locations: " + JSON.stringify(locations));
-    // res.status(200).render('search', {
-    //   locations,
-    // });
-    res.status(200).json(locations);
+    console.log("Hello WORLD");
+    res.render('search', {
+      locations,
+    });
+    // res.status(200).json(locations);
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
