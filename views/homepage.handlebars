@@ -21,10 +21,29 @@
     <div class="card-text">
       <p class="my-4">{{event.description}}</p>
     </div>
-
-    <a href="/{{location.id}}" class="stretched-link"></a>
+<a href="/location/{{event.location.id}}" class="stretched-link"></a>
+    
   </div>
 </div>
 {{/each}}
+
+{{!-- <br></br>
+<h3>All Locations</h3>
+
+{{#each locations as |location| }}
+<div class="card col shadow-sm my-2">
+  <div class="card-body">
+    <h5 class="card-title">{{location.name}}</h5>
+    <div class="card-subtitle">
+      <h6 class="mb-2 text-muted">{{location.address}}</h6>
+    </div>
+    <div class="card-text">
+      <p class="my-4">{{location.description}}</p>
+    </div>
+
+    <a href="/location/{{location.id}}" class="stretched-link"></a>
+  </div>
+</div>
+{{/each}} --}}
 
 <script type="text/javascript" src="./assets/js/script.js"></script>
