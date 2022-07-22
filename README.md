@@ -19,7 +19,9 @@ Users are able to search for local pickleball courts off the main page. If the u
 https://github.com/furhan-dev/pickleball
 
 ## Deployed
+https://www.stackmypaddle.com
 
+https://stack-my-paddle.herokuapp.com/
 
 ## Screenshot
 ![image](/views/images/screenshot.jpg)
