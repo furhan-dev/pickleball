@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       include:
       {
         model: Location,
-        attributes: ['name', 'address']
+        attributes: ['name', 'address', "id"]
 
       }
 

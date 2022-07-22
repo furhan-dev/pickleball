@@ -21,13 +21,13 @@
     <div class="card-text">
       <p class="my-4">{{event.description}}</p>
     </div>
-
+<a href="/location/{{event.location.id}}" class="stretched-link"></a>
     
   </div>
 </div>
 {{/each}}
 
-<br></br>
+{{!-- <br></br>
 <h3>All Locations</h3>
 
 {{#each locations as |location| }}
@@ -44,6 +44,6 @@
     <a href="/location/{{location.id}}" class="stretched-link"></a>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}
 
 <script type="text/javascript" src="./assets/js/script.js"></script>
