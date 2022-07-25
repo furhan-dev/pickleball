@@ -32,7 +32,7 @@ main {
   flex-wrap: nowrap;
   width: 96%;
   margin: 0.5rem auto 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 1rem;
   padding-top: 0;
   /*  max width no larger than 1200px as the page looks too sparse and project cards grow too big */
   max-width: 1200px;
@@ -49,10 +49,34 @@ footer {
   color: var(--almost-white) !important;
 }
 
+.title {
+  font-size: 1.1rem;
+}
+
+.subtitle {
+  font-size: .6rem;
+}
+
 #login-container {
   max-width: 400px;
   padding: 1rem 2rem 2rem 2rem;
 
   border: 1px solid #c0c0c0;
   border-radius: 5px;
+} 
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 0 2.5rem;
+  }
+
+  .navbar {
+    padding-left: 1rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
 }
