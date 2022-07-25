@@ -50,11 +50,15 @@ footer {
 }
 
 .title {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .subtitle {
-  font-size: .6rem;
+  font-size: .75rem;
+}
+
+.search-title {
+  font-size: 1.4rem;
 }
 
 #login-container {
@@ -78,5 +82,9 @@ footer {
   }
   .subtitle {
     font-size: 1.1rem;
+  }
+
+  .search-title {
+    font-size: 2rem;
   }
 }
