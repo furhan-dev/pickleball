@@ -29,7 +29,6 @@ Location.init(
     image: {
       type: DataTypes.STRING,
     }
-    // admin_id: {}, //references user with isAdmin=true
     // contact_id: {}, //references user with isContact=true
   },
   {

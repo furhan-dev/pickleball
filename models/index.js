@@ -3,12 +3,6 @@ const Location = require('./Location');
 const Event = require('./Event');
 const EventLocation = require('./EventLocation');
 const UserLocation = require('./UserLocation');
-// const Playtimes = require('./Playtime');
-// const favoriteLocation = require('./favoriteLocation');
-
-// User.hasMany(Location, {
-//   foreignKey: 'id',
-// });
 
 Location.belongsToMany(User, { through: UserLocation });
 User.belongsToMany(Location, { through: UserLocation });
