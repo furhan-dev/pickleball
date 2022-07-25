@@ -32,7 +32,8 @@
     "mysql2": "^2.3.3",
     "node-geocoder": "^4.2.0",
     "path": "^0.12.7",
-    "sequelize": "^6.21.3"
+    "sequelize": "^6.21.3",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
