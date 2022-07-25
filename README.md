@@ -24,4 +24,4 @@ https://www.stackmypaddle.com
 https://stack-my-paddle.herokuapp.com/
 
 ## Screenshot
-![image](/views/images/screenshot.jpg)
+![image](./public/assets/images/screenshot.jpg)
